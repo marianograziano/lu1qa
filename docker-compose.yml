@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  web:
+    image: php:7.4-apache
+    container_name: lu1qa_web
+    volumes:
+      - ./src:/var/www/html
+    ports:
+      - "8080:80"
+    networks:
+      - lu1qa_network
+
+  db:
+    image: mysql:5.7
+    container_name: lu1qa_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: lu1qa_db
+    ports:
+      - "3307:3306"  # Cambiar el puerto externo de 3306 a 3307
+    networks:
+      - lu1qa_network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: lu1qa_phpmyadmin
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: root_password
+    ports:
+      - "8081:80"
+    networks:
+      - lu1qa_network
+
+networks:
+  lu1qa_network:
+    driver: bridge

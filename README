@@ -1,0 +1,65 @@
+# LU1QA - Gestión de Radio Club Amateur
+
+LU1QA es una aplicación web diseñada para gestionar un radio club amateur. Utiliza PHP 7.4, MySQL y la plantilla AdminLTE, siguiendo la metodología TDD (Desarrollo Basado en Pruebas) y el patrón MVC (Modelo-Vista-Controlador).
+
+## Características
+
+- Gestión de usuarios con roles.
+- Panel de administración basado en AdminLTE.
+- Integración con phpMyAdmin para la gestión de la base de datos.
+- Implementación de pruebas unitarias con PHPUnit.
+
+## Requisitos
+
+- Docker
+- Docker Compose
+- Git
+
+## Configuración del Entorno de Desarrollo
+
+1. Clona el repositorio:
+    ```sh
+    git clone https://github.com/tu_usuario/LU1QA.git
+    cd LU1QA
+    ```
+
+2. Copia el archivo `.env.example` a `.env` y configura las variables de entorno según sea necesario:
+    ```sh
+    cp .env.example .env
+    ```
+
+3. Construye y levanta los contenedores Docker:
+    ```sh
+    docker-compose up -d
+    ```
+
+4. Accede a la aplicación web en tu navegador:
+    ```
+    http://localhost:8080
+    ```
+
+5. Accede a phpMyAdmin en tu navegador:
+    ```
+    http://localhost:8081
+    ```
+
+## Estructura del Proyecto
+
+- **src/**: Contiene el código fuente de la aplicación.
+  - **controllers/**: Controladores de la aplicación.
+  - **models/**: Modelos de datos.
+  - **views/**: Vistas de la aplicación.
+- **tests/**: Contiene las pruebas unitarias.
+- **docker-compose.yml**: Configuración de Docker Compose.
+- **Dockerfile**: Definición del contenedor Docker para el servidor web.
+- **phpunit.xml**: Configuración de PHPUnit.
+
+## Desarrollo Basado en Pruebas (TDD)
+
+El proyecto sigue la metodología TDD, por lo que cada funcionalidad es desarrollada primero con una prueba que falla, seguida de la implementación del código necesario para pasar la prueba.
+
+### Ejecutar Pruebas
+
+Para ejecutar las pruebas unitarias, utiliza el siguiente comando:
+```sh
+docker exec -it lu1qa_web vendor/bin/phpunit

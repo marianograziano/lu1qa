@@ -1,0 +1,35 @@
+# Ignorar archivos y directorios generados por el sistema operativo
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos de respaldo y temporales
+*~
+*.bak
+*.swp
+
+# Ignorar archivos de compilación y ejecutables
+*.o
+*.out
+*.exe
+
+# Ignorar directorios y archivos específicos
+/node_modules
+/dist
+/build
+
+# Ignorar archivos de configuración sensibles
+.env
+config.js
+
+# Ignorar archivos de registro y salida
+*.log
+*.log.*
+*.txt
+
+# Ignorar archivos de dependencias y paquetes
+/package-lock.json
+/yarn.lock
+
+# Ignorar archivos de IDE y editores de texto
+.idea/
+.vscode/
